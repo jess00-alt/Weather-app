@@ -1,0 +1,12 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A simple weather app using HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'No start script needed' && exit 0",
+    "build": "echo 'No build step needed' && exit 0"
+  },
+  "author": "Jessica",
+  "license": "MIT"
+}
