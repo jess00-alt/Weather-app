@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <title>My weather application</title>
   </head>
   <body>
@@ -31,17 +31,19 @@
           <div>
             <h1 id="current-city">Paris</h1>
             <p class="current-details">
-              <span class="current-date">Saturday 15:32</span>, <span class = "temp-description"> moderate rain </span>
+              <span class="current-date">◴ </span>,      <span class = "temp-description">.....</span>
+
+
               <br />
-              Humidity: <strong><span class = "humidity-temp">87%</span></strong
-              >, Wind: <strong><span class = "wind-temp">7.2km/h</span></strong>
+              Humidity:  <strong><span class = "humidity-temp"> ⏳ </span></strong>
+            , Wind:   <strong><span class = "wind-temp"> ⏳ </span></strong>
             </p>
           </div>
           <div class="current-temperature">
-            <span class = "current-temperature-emoji"> ☀ </span>
+            <img src = "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png" id = "temperature-icon" />
             <br />
           
-            <strong><span class="current-temperature-value">14°C</span></strong>
+            <strong><span class="current-temperature-value">...°C </span></strong>
           </div>
         </div>
       </main>
@@ -68,6 +70,6 @@
       </footer>
     </div>
 
-    <script src="app.js"></script>
+    <script src="src/app.js" ></script>
   </body>
 </html>
