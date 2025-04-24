@@ -19,9 +19,16 @@ form {
     color: #22303F;
     border:#22303F;
     background-color: #f9f7f7;
-    width: 400px;
+    width: 600px;
     padding: 20px 15px;
     border-radius:8px;
+}
+
+#current-city {
+    font-size: 50px;
+}
+main {
+    margin: 50px auto;
 }
 
 .submit-button {
@@ -29,6 +36,7 @@ form {
     margin-left: 25px;
     background-color: #264061;
     border: none;
+    transition: all 1500ms ease-in-out;
     width: 150px;
     padding: 20px 40px;
     border-radius: 10px;
@@ -37,21 +45,35 @@ form {
 
 
 .current-weather {
-    display: inline-flex;
-    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10px;
 }
 
 .current-temperature {
-    margin-left: 215px;
-    margin-top:20px;
+    margin-left: 200px;
+    margin-right:auto;
+    margin-top: 20px;
     font-size: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.current-temperature-emoji {
-    font-size: 48px;
-    margin-bottom: 10px;
+.current-temperature-value {
+    font-size: 55px;
+    margin-left: auto;
+}
+
+#temperature-icon {
+    padding-top: 10px;
+    width: 88px;
+    height: 88px;
+    margin: 10px auto;
 }
 
 a {
     color:#22303f
 }
+
