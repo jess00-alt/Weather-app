@@ -43,8 +43,11 @@ function search(event) {
 function searchCity (city) {
   let apiKey = "o7ae8422tbf7a3d6181c62ca5104de1d";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  let forecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayTemperature);
+  axios.get(forecastUrl).then(response => displayForecast(response.data));
+
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -77,6 +80,25 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 
 
+}
 
+function displayForecast(forecast) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = ""; 
+
+  forecast.daily.slice(0, 3).forEach(function (day) {
+    let date = new Date(day.time * 1000);
+    let options = { weekday: 'short' };
+    let dayName = date.toLocaleDateString(undefined, options);
+
+    forecastElement.innerHTML += `
+      <div class="forecast-day">
+        <div><strong>${dayName}</strong></div>
+        <img src="${day.condition.icon_url}" alt="${day.condition.description}" width="50"/>
+        <div>${Math.round(day.temperature.maximum)}° / ${Math.round(day.temperature.minimum)}°</div>
+      </div>
+      
+    `;
+  });
 }
 
